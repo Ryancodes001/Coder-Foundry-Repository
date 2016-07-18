@@ -217,6 +217,10 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="index.html" />
+    <Content Include="js\comparescript.js" />
+    <Content Include="js\factorial-script.js" />
+    <Content Include="js\fizzbuzz.js" />
+    <Content Include="js\Palindrome.js" />
     <Content Include="post.html" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -277,7 +281,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="css\" />
     <Folder Include="img\" />
-    <Folder Include="js\" />
     <Folder Include="less\" />
     <Folder Include="mail\" />
     <Folder Include="vendor\" />
