@@ -214,12 +214,17 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\clean-blog.css" />
     <Content Include="css\clean-blog.min.css" />
-    <Content Include="css\shCore.css" />
+    <Content Include="css\prism.css" />
     <Content Include="css\shThemeDefault.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\autumn.jpg" />
+    <Content Include="img\fire.jpeg" />
+    <Content Include="img\Lightning.jpeg" />
+    <Content Include="img\open.jpeg" />
+    <Content Include="img\zen2.jpg" />
     <Content Include="index.html" />
     <Content Include="js\clean-blog.js" />
     <Content Include="js\clean-blog.min.js" />
@@ -229,8 +234,7 @@
     <Content Include="js\fizzbuzz.js" />
     <Content Include="js\jqBootstrapValidation.js" />
     <Content Include="js\Palindrome.js" />
-    <Content Include="js\shBrushJScript.js" />
-    <Content Include="js\shCore.js" />
+    <Content Include="js\prism.js" />
     <Content Include="post.html" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -240,6 +244,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="RyanRousseauResumeJuly2016.pdf" />
+    <None Include="Properties\PublishProfiles\rrousseau-portfolio.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -337,7 +342,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="img\" />
     <Folder Include="less\" />
     <Folder Include="mail\" />
   </ItemGroup>

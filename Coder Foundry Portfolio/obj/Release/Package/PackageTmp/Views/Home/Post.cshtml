@@ -1,0 +1,339 @@
+﻿
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('/img/zen2.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>My Journey through the chaos of code to the zen of developing</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                    <!-- Button trigger modal -->
+                    <a data-toggle="modal" href="#myModal1" class="btn btn-primary btn-lg">Gimme 5 Numbers!</a>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h4 class="modal-title">And I'll show you something!</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <body>
+
+                                        <h1>Enter numbers below</h1>
+
+                                        <form>
+                                            <fieldset>
+
+                                                <input id="first" type="text" name="answer1">
+                                                <br>
+                                                <input id="second" type="text" name="answer2">
+                                                <br>
+                                                <input id="third" type="text" name="answer3">
+                                                <br>
+                                                <input id="fourth" type="text" name="answer4">
+                                                <br>
+                                                <input id="fifth" type="text" name="answer5">
+                                                <br>
+
+                                                <button id="compareButton">Submit</button>
+
+
+                                            </fieldset>
+                                        </form>
+
+                                        <div id="output1">The min: </div>
+                                        <div id="output2">The max: </div>
+                                        <div id="output3">The mean: </div>
+                                        <div id="output4">The sum: </div>
+                                        <div id="output5">The product: </div>
+
+                                        
+                                    </body>
+                             </div>
+
+                          <div class="col-sm-12 margin-small">
+                                
+                              <pre class="brush: js;"> 
+
+$(document).ready(function() {
+var input1,
+input2,
+input3,
+input4,
+input5;
+$('#compareButton').click(function(event) {
+event.preventDefault();
+input1 = $('#first').val();
+input2 = $('#second').val();
+input3 = $('#third').val();
+input4 = $('#fourth').val();
+input5 = $('#fifth').val();
+if ($.isNumeric(input1), $.isNumeric(input2), $.isNumeric(input3), $.isNumeric(input4), $.isNumeric(input5)) { 
+			
+input1 = parseInt(input1);
+input2 = parseInt(input2);
+input3 = parseInt(input3);
+input4 = parseInt(input4);
+input5 = parseInt(input5);
+var least =Math.min(input1, input2, input3, input4, input5);
+var greatest =Math.max(input1, input2, input3, input4, input5);
+var mean =((input1 + input2 + input3 + input4 + input5) / 5);
+var sum = (input1 + input2 + input3 + input4 + input5);
+var product = (input1 * input2 * input3 * input4 * input5);
+$('#output1').append(least);
+$('#output2').append(greatest);
+$('#output3').append(mean);
+$('#output4').append(sum);
+$('#output5').append(product);
+}
+else {
+alert("Those aren't pillows!");
+}
+	
+// console.log(answer3);
+// console.log(answer4);
+// console.log(answer1);
+// console.log(answer5);
+// console.log(answer2);
+});
+});
+                               
+                             </pre>
+                          </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+
+                    <!-- Button trigger modal -->
+                    <a data-toggle="modal" href="#myModal2" class="btn btn-primary btn-lg">As a matter of Factorial...</a>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h4 class="modal-title">The Factorials of life</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <body>
+
+                                        <h1>Enter numbers below</h1>
+
+                                        <form>
+                                            <fieldset>
+
+                                                <input id="factorialInput" type="number">
+                                                <br>
+
+                                                <button id="factorialButton">Submit</button>
+
+
+                                            </fieldset>
+                                        </form>
+
+                                        <div id="factorialOutput">The Factorial is.....: </div>
+
+
+                                    </body>
+
+
+                                    <div class="col-sm-12 margin-small">
+
+                                        <pre class="brush: js;"> 
+$(document).ready(function() {
+var inputValue;
+$('#factorialButton').click(function(event) {
+ 	 event.preventDefault();
+	inputValue = $('#factorialInput').val()
+ 	
+var answer= inputValue;
+for (var i = inputValue; i > 1; i--) { 
+	answer = answer * (i -1);
+	
+}
+   
+$('#factorialOutput').append(answer);
+		});
+	});                               
+                             </pre>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+
+                    <!-- Button trigger modal -->
+                    <a data-toggle="modal" href="#myModal3" class="btn btn-primary btn-lg">When you say Fizz...</a>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h4 class="modal-title">I say Buzz!</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <body>
+
+                                        <h1>Enter numbers below to see them Fizz and Buzz!</h1>
+
+                                        <form>
+                                            <fieldset>
+                                                <input id="fizzInput1" type="number">
+                                                <br>
+                                                <input id="fizzInput2" type="number">
+                                                <br>
+
+                                                <button id="fizzButton">Submit</button>
+
+
+                                            </fieldset>
+                                        </form>
+
+                                        <div id="fizzOutput">Look at those FizzBuzzes! </div>
+                                        
+
+
+                                    </body>
+
+
+                                    <div class="col-sm-12 margin-small">
+
+                                        <pre class="brush: js;"> 
+ $(document).ready(function() {
+$('#fizzButton').click(function(event) {
+     event.preventDefault();
+	var input1 = $('#fizzInput1').val()
+	var input2 = $('#fizzInput2').val()
+for (var i=1; i <= 100; i++){
+   if (i % input1===0 && i % input2 ===0) {
+     $('#fizzOutput').append("FizzBuzz" + "<br />");
+         
+        }else if (i % input1 === 0){
+         $('#fizzOutput').append("Fizz" + "<br />");
+        }
+       
+        else if (i % input2 === 0){
+           $('#fizzOutput').append("Buzz" + "<br />");
+        }
+        
+        else{
+            $('#fizzOutput').append(i + "<br />");
+        };
+    };
+    
+});
+});
+                               
+                             </pre>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+
+                    <!-- Button trigger modal -->
+                    <a data-toggle="modal" href="#myModal4" class="btn btn-primary btn-lg">A man a plan a canal Panama</a>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h4 class="modal-title">Sorry if I Palindrome on...</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <body>
+                                        <h1>Do you even Palindrome, Brah?</h1>
+
+                                        <form>
+                                            <fieldset>
+                                                <input id="inputString" type="text">
+                                                <br>
+                                                <button id="palindromeButton">Submit</button>
+
+                                            </fieldset>
+                                        </form>
+
+
+                                    </body>
+
+
+                                    <div class="col-sm-12 margin-small">
+
+                                        <pre class="brush: js;"> 
+ $(document).ready(function() {
+	var inputString,
+		reverseString;
+		$('#palindromeButton').click(function(event) {
+ 	 event.preventDefault(); 
+ 	 inputString = $('#inputString').val();
+ 	 console.log(inputString);
+ 	reverseString = inputString.split("").reverse().join("");
+ 	
+ 	 if (inputString == reverseString) {
+ 		alert("You got a fancy Palindrome!");
+ 	}
+ 	else {
+ 		alert("Nice try sucka!");
+ 	}
+ 		});
+	});
+                               
+                             </pre>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    
+                   
+                    @*<span class="caption text-muted">Woke up this morning, put on my slippers, walked in the kitchen and died</span>
+                    <p>My coding career began over a plate of pasta and cheesy breaksticks. Two good friends and I had decided that the best way to proceed in this life was to build things from our
+                    couches. I had not shown much in the way of technical inclination before, so I was hesitant to pursue a career in coding. My interests had always been in strategy games and Lego construction, and 
+                    working through logic puzzles. What was I going to do sitting at a computer? </p>
+
+                    <h3>I was going to have a lot of fun</h3>
+
+                    <p>I began my journey, like many do, with simply Googling free resources. And then I was buried in resources. The web was so very congested with suggestions and guidelines for "learing to code quick!" or "Make 100k after only 12 weeks of training!" Needless to say, I was not convinced. </p>*@
+                </div>
+            </div>
+
+        </div>
+    </article>
+    <hr>
+    <!-- Footer -->
+    
