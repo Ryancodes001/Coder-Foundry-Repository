@@ -5,10 +5,10 @@ var inputValue;
 
 
 
-$('#button').click(function(event) {
+$('#factorialButton').click(function(event) {
  	 event.preventDefault();
 
-	inputValue = $('#input').val()
+	inputValue = $('#factorialInput').val()
  	
 
 
@@ -21,7 +21,7 @@ for (var i = inputValue; i > 1; i--) {
    
 
 
-$('#output1').append(answer);
+$('#factorialOutput').append(answer);
 
 
 

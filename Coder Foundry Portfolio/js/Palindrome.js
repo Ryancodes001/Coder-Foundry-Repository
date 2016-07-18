@@ -3,7 +3,7 @@ $(document).ready(function() {
 	var inputString,
 		reverseString;
 
-		$('#button').click(function(event) {
+		$('#palindromeButton').click(function(event) {
  	 event.preventDefault(); 
 
  	 inputString = $('#inputString').val();

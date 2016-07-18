@@ -8,7 +8,7 @@ var input1,
 
 
 
- 	$('#button').click(function(event) {
+ 	$('#compareButton').click(function(event) {
  	 event.preventDefault();
 
 
