@@ -13,7 +13,8 @@
     <link href="~/css/clean-blog.min.css" rel="stylesheet">
     <!-- Syntax Highlighter CSS -->
     
-    <link href="~/css/prism.css" rel="stylesheet" type="stylesheet.css" />
+    <link href="~/css/prism.css" rel="stylesheet" />
+
 
     <!-- Custom Fonts -->
     <link href="~/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -52,6 +53,11 @@
                     <li>
                         <a href="@Url.Action("Contact","Home")">Contact</a>
                     </li>
+                         
+                    <li>
+                        @Html.Partial("_LoginPartial")
+                    </li>
+                  
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -88,6 +94,14 @@
                                 </span>
                             </a>
                         </li>
+                        <li>
+                            <a href="https://linkedin.com/in/ryan-rousseau" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
                     </ul>
                     <p class="copyright text-muted">Copyright &copy; Ryan Rousseau 2016</p>
                 </div>
@@ -114,11 +128,7 @@
 
     <script src="~/js/prism.js"></script>
 
-    @*<script src="~/js/shBrushJScript.js"></script>
-    <script src="~/js/shCore.js"></script>
-
-    <script>SyntaxHighlighter.all();</script>*@
-
+    @RenderSection("scripts", required: false)
 
 
 </body>

@@ -5,18 +5,22 @@ $(document).ready(function() {
 
 		$('#palindromeButton').click(function(event) {
  	 event.preventDefault(); 
+ 	 $('#palindromeOutput').empty();
 
- 	 inputString = $('#inputString').val();
- 	 console.log(inputString);
+ 	 inputString = $('#inputString').val().toLowerCase();
+ 	 
+ 	 inputString = inputString.replace(/[^a-z0-9]/g, '');
+
+ 	 
 
  	reverseString = inputString.split("").reverse().join("");
  	
 
  	 if (inputString == reverseString) {
- 		alert("You got a fancy Palindrome!");
+ 		$('#palindromeOutput').append("You got a fancy Palindrome!");
  	}
  	else {
- 		alert("Nice try sucka!");
+ 		$('#palindromeOutput').append("Ah Ah Ah-You didin't say the magic word-Ah Ah Ah");
  	}
 
 
