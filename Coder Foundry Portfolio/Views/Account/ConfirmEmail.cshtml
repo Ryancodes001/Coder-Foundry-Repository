@@ -1,10 +1,39 @@
-﻿@{
-    ViewBag.Title = "Confirm Email";
-}
+﻿<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('/img/construction.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg col-md-10 col-md">
+                <div class="page-heading">
+                    <h1>Temp img</h1>
+                    <hr class="small">
+                    <span class="subheading">We are ready to believe you!.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-<h2>@ViewBag.Title.</h2>
-<div>
-    <p>
-        Thank you for confirming your email. Please @Html.ActionLink("Click here to Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
-    </p>
+
+
+
+
+
+            @{
+                ViewBag.Title = "Confirm Email";
+            }
+
+            <h2>@ViewBag.Title.</h2>
+            <div>
+                <p>
+                    Thank you for confirming your email. Please @Html.ActionLink("Click here to Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+                </p>
+            </div>
+
+        </div>
+    </div>
 </div>

@@ -1,12 +1,8 @@
 ﻿using Coder_Foundry_Portfolio.Models;
 using Coder_Foundry_Portfolio.Models.CodeFirst;
-using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Coder_Foundry_Portfolio.Controllers

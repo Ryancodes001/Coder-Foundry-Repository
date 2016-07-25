@@ -1,72 +1,100 @@
-﻿@model Coder_Foundry_Portfolio.Models.CodeFirst.Comment
-
-@{
-    ViewBag.Title = "Delete";
-}
-
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Comment</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Author.FirstName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Author.FirstName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Post.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Post.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Body)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Body)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Created)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Created)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Updated)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Updated)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UpdateReason)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UpdateReason)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+﻿<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('/img/construction.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg col-md-10 col-md">
+                <div class="page-heading">
+                    <h1>Temp img</h1>
+                    <hr class="small">
+                    <span class="subheading">We are ready to believe you!.</span>
+                </div>
+            </div>
         </div>
-    }
+    </div>
+</header>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+
+
+
+            @model Coder_Foundry_Portfolio.Models.CodeFirst.Comment
+
+            @{
+                ViewBag.Title = "Delete";
+            }
+
+            <h2>Delete</h2>
+
+            <h3>Are you sure you want to delete this?</h3>
+            <div>
+                <h4>Comment</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Author.FirstName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Author.FirstName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Post.Title)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Post.Title)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Body)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Body)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Created)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Created)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Updated)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Updated)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UpdateReason)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.UpdateReason)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-default" /> |
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
 </div>

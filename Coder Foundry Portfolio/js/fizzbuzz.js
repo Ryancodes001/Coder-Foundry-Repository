@@ -14,14 +14,14 @@ if  (((input1 > 0) && (input1 <= 100)) && ((input2 > 0) && (input2 <= 100))) {
 for (var i=1; i <= 100; i++){
 
    if (i % input1===0 && i % input2 ===0) {
-     $('#fizzOutput').append("FizzBuzz" + "<br/>");
+       $('#fizzOutput').append("<font color='green'>FizzBuzz" + "<br/>");
          
         }else if (i % input1 === 0){
-         $('#fizzOutput').append("Fizz" + "<br/>");
+            $('#fizzOutput').append("<font color='blue'>Fizz" + "<br/>");
         }
        
         else if (i % input2 === 0){
-           $('#fizzOutput').append("Buzz" + "<br/>");
+            $('#fizzOutput').append("<font color='red'>Buzz" + "<br/>");
         }
         
         else{

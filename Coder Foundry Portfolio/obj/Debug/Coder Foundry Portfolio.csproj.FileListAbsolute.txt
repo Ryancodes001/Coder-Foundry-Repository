@@ -122,24 +122,21 @@ C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry P
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\Newtonsoft.Json.dll
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\Owin.dll
-C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\System.Web.Helpers.dll
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\System.Web.Mvc.dll
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\System.Web.Optimization.dll
-C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\System.Web.Razor.dll
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\System.Web.WebPages.Deployment.dll
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\System.Web.WebPages.dll
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\System.Web.WebPages.Razor.dll
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\WebGrease.dll
+C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\System.Web.Razor.dll
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\Microsoft.AI.DependencyCollector.xml
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\Microsoft.AI.Web.xml
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\Microsoft.ApplicationInsights.xml
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\System.Web.Helpers.xml
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\System.Web.Mvc.xml
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\System.Web.Optimization.xml
-C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\System.Web.Razor.xml
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\System.Web.WebPages.xml
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\System.Web.WebPages.Deployment.xml
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\System.Web.WebPages.Razor.xml
@@ -161,4 +158,3 @@ C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry P
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\obj\Debug\Coder Foundry Portfolio.dll
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\obj\Debug\Coder Foundry Portfolio.pdb
-C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\obj\Debug\Coder Foundry Portfolio.csprojResolveAssemblyReference.cache

@@ -17,7 +17,7 @@ $(document).ready(function() {
  	
 
  	 if (inputString == reverseString) {
- 		$('#palindromeOutput').append("You got a fancy Palindrome!");
+ 		$('#palindromeOutput').append("You've got a fancy Palindrome!");
  	}
  	else {
  		$('#palindromeOutput').append("Ah Ah Ah-You didin't say the magic word-Ah Ah Ah");

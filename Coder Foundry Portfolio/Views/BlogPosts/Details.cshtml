@@ -5,71 +5,100 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('/img/construction.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg col-md-10 col-md">
+                <div class="page-heading">
+                    <h1>Temp img</h1>
+                    <hr class="small">
+                    <span class="subheading">We are ready to believe you!.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-<div>
-    <h4>BlogPost</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Created)
-        </dt>
+            @Html.Raw(Model.Content)
 
-        <dd>
-            @Html.DisplayFor(model => model.Created)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Updated)
-        </dt>
+          
 
-        <dd>
-            @Html.DisplayFor(model => model.Updated)
-        </dd>
+            <h2>Details</h2>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+            <div>
+                <h4>BlogPost</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Created)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Created)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Slug)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Updated)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Slug)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Updated)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Body)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Body)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Title)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MediaURL)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Slug)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.MediaURL)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Slug)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Published)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Body)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Published)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Body)
+                    </dd>
 
-    </dl>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.MediaURL)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.MediaURL)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Published)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Published)
+                    </dd>
+
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

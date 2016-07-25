@@ -11,7 +11,7 @@
     <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Theme CSS -->
     <link href="~/css/clean-blog.min.css" rel="stylesheet">
-    <!-- Syntax Highlighter CSS -->
+    <!-- Prism Syntax Highlighter CSS -->
     
     <link href="~/css/prism.css" rel="stylesheet" />
 
@@ -40,26 +40,27 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="@Url.Action("Index","Home")">Home</a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("About","Home")">About</a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Post","Home")">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Contact","Home")">Contact</a>
-                    </li>
-                         
-                    <li>
-                        @Html.Partial("_LoginPartial")
-                    </li>
-                  
-                </ul>
-            </div>
+                
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="@Url.Action("Index","Home")" class="navbar-brand">Home</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","BlogPosts")">Blog</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Post","Home")">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Contact","Home")">Contact</a>
+                        </li>
+
+                        <li>
+                            @Html.Partial("_LoginPartial")
+                        </li>
+
+                    </ul>
+</div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -120,9 +121,9 @@
     <!-- Personal JavaScript -->
 
     <script src="~/js/comparescript.js"></script>
-    <script src="~/js/factorial-script.js"></script>
+    <script src="~/js/Palindrome.js"></script>
     <script src="~/js/fizzbuzz.js"></script>
-    <script src="~/js/palindrome.js"></script>
+    <script src="~/js/factorial-script.js"></script>
 
     <!-- Syntax Hightlighter -->
 
