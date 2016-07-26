@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>My Journey through the chaos of code to the zen of developing</h1>
+                    <h1>A few things that I have done</h1>
                 </div>
             </div>
         </div>
@@ -20,12 +20,14 @@
 
     <div class="container">
         <div class="row">
+            <div class="col-lg-10 offset-2">
 
-            <a data-toggle="modal" href="#myModal1" class="btn btn-primary btn-lg">Comparing Numbers</a>
-            <a data-toggle="modal" href="#myModal2" class="btn btn-primary btn-lg">Factorial</a>
-            <a data-toggle="modal" href="#myModal3" class="btn btn-primary btn-lg">When you say Fizz...</a>
-            <a data-toggle="modal" href="#myModal4" class="btn btn-primary btn-lg">Palindrome</a>
+                <a data-toggle="modal" href="#myModal1" class="btn btn-primary btn-lg">Comparing Numbers</a>
+                <a data-toggle="modal" href="#myModal2" class="btn btn-primary btn-lg">Factorial</a>
+                <a data-toggle="modal" href="#myModal3" class="btn btn-primary btn-lg">When you say Fizz...</a>
+                <a data-toggle="modal" href="#myModal4" class="btn btn-primary btn-lg">Palindrome</a>
 
+            </div>
         </div>
 
          <div class="row">
@@ -249,14 +251,14 @@ $('#fizzButton').click(function(event) {
 if  (((input1 > 0) && (input1 <= 100)) && ((input2 > 0) && (input2 <= 100))) {
 for (var i=1; i <= 100; i++){
    if (i % input1===0 && i % input2 ===0) {
-       $('#fizzOutput').append("<font color='green'>FizzBuzz" + "<br />");
+       $('#fizzOutput').append("<font color='green;'>FizzBuzz</font>" + "<br />");
          
         }else if (i % input1 === 0){
-            $('#fizzOutput').append("<font color='blue'>Fizz" + "<br />");
+            $('#fizzOutput').append("<font color='blue;'>Fizz</font>" + "<br />");
         }
        
         else if (i % input2 === 0){
-            $('#fizzOutput').append("<font color='red'>Buzz" + "<br />");
+            $('#fizzOutput').append("<font color='red;'>Buzz</font>" + "<br />");
         }
         
         else{
@@ -291,7 +293,7 @@ for (var i=1; i <= 100; i++){
                                  <h5>Try "A Man, A plan, A canal, Panama!"</h5>
                              </div>
                              <div class="modal-body">
-                                 <body>
+                               
                                      <h2>Do you even Palindrome, Brah?</h2>
 
                                      <form>
@@ -305,7 +307,7 @@ for (var i=1; i <= 100; i++){
                                      </form>
                                      <h2><span id="palindromeOutput"></span></h2>
 
-                                 </body>
+                                 
                              </div>
 
 <pre class="line-numbers">
@@ -327,6 +329,7 @@ for (var i=1; i <= 100; i++){
  	}
   });
 });
+
 </code>
 </pre>
                              <div class="modal-footer">

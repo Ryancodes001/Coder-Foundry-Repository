@@ -1,5 +1,6 @@
 ﻿using Coder_Foundry_Portfolio.Models;
 using Coder_Foundry_Portfolio.Models.CodeFirst;
+using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -49,6 +50,8 @@ namespace Coder_Foundry_Portfolio.Controllers
         {
             if (ModelState.IsValid)
             {
+                blogPost.Created = DateTime.Now;
+
                 db.Posts.Add(blogPost);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -58,6 +61,7 @@ namespace Coder_Foundry_Portfolio.Controllers
         }
 
         // GET: BlogPosts/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -81,6 +85,8 @@ namespace Coder_Foundry_Portfolio.Controllers
         {
             if (ModelState.IsValid)
             {
+                blogPost.Updated = DateTime.Now;
+
                 db.Entry(blogPost).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -89,6 +95,7 @@ namespace Coder_Foundry_Portfolio.Controllers
         }
 
         // GET: BlogPosts/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

@@ -37,23 +37,21 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
+                <a class="navbar-brand" href="@Url.Action("Index","Home")">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="@Url.Action("Index","Home")" class="navbar-brand">Home</a>
-                        </li>
-                        <li>
+                         <li>
                             <a href="@Url.Action("Index","BlogPosts")">Blog</a>
                         </li>
                         <li>
                             <a href="@Url.Action("Post","Home")">Portfolio</a>
                         </li>
-                        <li>
+                        @*<li>
                             <a href="@Url.Action("Contact","Home")">Contact</a>
-                        </li>
+                        </li>*@
 
                         <li>
                             @Html.Partial("_LoginPartial")
@@ -130,6 +128,10 @@
     <script src="~/js/prism.js"></script>
 
     @RenderSection("scripts", required: false)
+
+    <!---tinyMCE-->
+    <script src="~/Scripts/tinymce/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'.textarea' });</script>
 
 
 </body>

@@ -1,0 +1,89 @@
+﻿<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('/img/construction.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg col-md-10 col-md">
+                <div class="page-heading">
+                    <h1>Temp img</h1>
+                    <hr class="small">
+                    <span class="subheading">We are ready to believe you!.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+
+
+            @model IEnumerable<Coder_Foundry_Portfolio.Models.CodeFirst.Comment>
+
+            @{
+                ViewBag.Title = "Index";
+            }
+
+            <h2>Index</h2>
+
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Author.FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Post.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Body)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Created)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Updated)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UpdateReason)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Author.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Post.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Body)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Created)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Updated)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UpdateReason)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
