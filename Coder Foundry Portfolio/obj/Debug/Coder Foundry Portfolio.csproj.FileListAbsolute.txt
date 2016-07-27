@@ -159,3 +159,7 @@ C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry P
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\obj\Debug\Coder Foundry Portfolio.dll
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\obj\Debug\Coder Foundry Portfolio.pdb
 C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\obj\Debug\Coder Foundry Portfolio.csprojResolveAssemblyReference.cache
+C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\PagedList.dll
+C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\PagedList.Mvc.dll
+C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\PagedList.xml
+C:\Users\rrous\OneDrive\Documents\GitHub\Coder-Foundry-Portfolio\Coder Foundry Portfolio\bin\PagedList.Mvc.xml

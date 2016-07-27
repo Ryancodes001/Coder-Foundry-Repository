@@ -1,11 +1,14 @@
 ﻿using Coder_Foundry_Portfolio.Models;
 using Coder_Foundry_Portfolio.Models.CodeFirst;
+using PagedList;
 using System;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
-
+using PagedList.Mvc;
 namespace Coder_Foundry_Portfolio.Controllers
 {
     public class BlogPostsController : Controller
@@ -14,25 +17,30 @@ namespace Coder_Foundry_Portfolio.Controllers
 
         // GET: BlogPosts
         //[Authorize]
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View(db.Posts.ToList());
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+
+            return View(db.blogPosts.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize )); /*this is where to order the appearence of blog entries in order*/
         }
 
         // GET: BlogPosts/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string Slug)
         {
-            if (id == null)
+            if (String.IsNullOrWhiteSpace(Slug))
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BlogPost blogPost = db.Posts.Find(id);
-            if (blogPost == null)
+            BlogPost post = db.blogPosts.FirstOrDefault(p => p.Slug == Slug);
+            if (post == null)
             {
                 return HttpNotFound();
             }
-            return View(blogPost);
+
+            return View(post);
         }
+    
 
         // GET: BlogPosts/Create
         [Authorize(Roles = "Admin")]
@@ -46,18 +54,54 @@ namespace Coder_Foundry_Portfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Published")] BlogPost blogPost)
+        public ActionResult Create([Bind(Include = "Id,Created,Updated,Title,Slug,Body,MediaURL,Published")] BlogPost blogPosts, HttpPostedFileBase image)
         {
-            if (ModelState.IsValid)
+            if (image != null && image.ContentLength > 0)
             {
-                blogPost.Created = DateTime.Now;
+                //check the file name to make sure its an image
+                var ext = Path.GetExtension(image.FileName).ToLower();
+                if (ext != ".png" && ext != ".jpg" && ext != ".jpeg" && ext != ".gif" && ext != ".bmp")
+                    ModelState.AddModelError("image", "Invalid Format.");
+            }
+            {
+                if (ModelState.IsValid)
+                {
+                    var Slug = StringUtilities.URLFriendly(blogPosts.Title);
+                    if(String.IsNullOrWhiteSpace(Slug))
+                    {
+                          ModelState.AddModelError("Title", "Invalid title.");
+                        return View(blogPosts);
+                    }
 
-                db.Posts.Add(blogPost);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                    if (db.blogPosts.Any(p => p.Slug == Slug))
+                    {
+                        ModelState.AddModelError("Title", "The title must be unique.");
+                        return View(blogPosts);
+                    }
+
+
+                    if (image != null)
+                                            {
+                        //relative server path
+                        var filePath = "/Uploads/";
+                        // path on physical drive on server
+                        var absPath = Server.MapPath("~" + filePath);
+                        // media url for relative path
+                        blogPosts.MediaURL = filePath + image.FileName;
+                        //save image
+                        image.SaveAs(Path.Combine(absPath, image.FileName));
+                    }
+
+                    blogPosts.Slug = Slug;
+                    blogPosts.Created = DateTimeOffset.Now;
+                    db.blogPosts.Add(blogPosts);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
 
-            return View(blogPost);
+            
+               return View(blogPosts);
         }
 
         // GET: BlogPosts/Edit/5
@@ -68,7 +112,7 @@ namespace Coder_Foundry_Portfolio.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BlogPost blogPost = db.Posts.Find(id);
+            BlogPost blogPost = db.blogPosts.Find(id);
             if (blogPost == null)
             {
                 return HttpNotFound();
@@ -85,8 +129,21 @@ namespace Coder_Foundry_Portfolio.Controllers
         {
             if (ModelState.IsValid)
             {
-                blogPost.Updated = DateTime.Now;
+                var Slug = StringUtilities.URLFriendly(blogPost.Title);
+                if (String.IsNullOrWhiteSpace(Slug))
+                {
+                    ModelState.AddModelError("Title", "Invalid title.");
+                    return View(blogPost);
+                }
 
+                if (db.blogPosts.Any(p => p.Slug == Slug))
+                {
+                    ModelState.AddModelError("Title", "The title must be unique.");
+                    return View(blogPost);
+                }
+
+                blogPost.Slug = Slug;
+                blogPost.Updated = DateTimeOffset.Now;
                 db.Entry(blogPost).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -102,7 +159,7 @@ namespace Coder_Foundry_Portfolio.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BlogPost blogPost = db.Posts.Find(id);
+            BlogPost blogPost = db.blogPosts.Find(id);
             if (blogPost == null)
             {
                 return HttpNotFound();
@@ -115,8 +172,8 @@ namespace Coder_Foundry_Portfolio.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            BlogPost blogPost = db.Posts.Find(id);
-            db.Posts.Remove(blogPost);
+            BlogPost blogPost = db.blogPosts.Find(id);
+            db.blogPosts.Remove(blogPost);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -42,7 +42,8 @@ namespace Coder_Foundry_Portfolio.Models
         {
             return new ApplicationDbContext();
         }
-        public DbSet<BlogPost> Posts { get; set; }
+        public DbSet<BlogPost> blogPosts { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        
     }
 }
