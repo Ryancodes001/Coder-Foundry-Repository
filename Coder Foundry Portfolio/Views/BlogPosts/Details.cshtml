@@ -36,60 +36,26 @@
             <hr>
                    }
 
+            <h5>Comments</h5>
+
+            @foreach (var item in Model.Comments)
+            {
+                <br/>
+                    <p> @Html.DisplayFor(modelItem => item.Body)</p>
+                        using (Html.BeginForm("Delete", "Comments", FormMethod.Post, new { enctype = "Multipart/form-data" })) {
+                            <input type="hidden" value="@item.Id" name="id" />
+                            <input type="submit" value="Delete" class="btn btn-default" />
+                        }
 
 
+            }
 
 
-
-               
-            @*<h2>Details</h2>
-
-            <div>
-                <h4>BlogPost</h4>
-                <hr />
-                <dl class="dl-horizontal">
-                    <dt>
-                        
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Created)
-                    </dd>
-
-                   
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Title)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Title)
-                    </dd>
-
-                   
-
-                    @*<dt>
-                        @Html.Raw(Model.Body)
-                    </dt>*@
-
-                    @*<dd>
-                        @Html.Raw(Model.Body)
-                    </dd>*@
-
-                    
-                   
-
-                    @*<dt>
-                        @Html.DisplayNameFor(model => model.Published)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Published)
-                    </dd>*@
-
-                @*</dl>*@
-            
-            
+               @Html.ActionLink("Create Comment", "Create", "Comments", new { id = Model.Id }, null)
+           
+            <br/>
+            <br/>
+                @Html.ActionLink("Delete", "Delete", new { id = Model.Id }) |
                 @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
                 @Html.ActionLink("Back to List", "Index")
             
@@ -150,6 +116,56 @@
                     @Html.DisplayFor(model => model.Published)
                 </dd>*@
 
+
+
+
+
+            @*<h2>Details</h2>
+
+        <div>
+            <h4>BlogPost</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Created)
+                </dd>
+
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
+
+
+
+                @*<dt>
+                    @Html.Raw(Model.Body)
+                </dt>*@
+
+            @*<dd>
+            @Html.Raw(Model.Body)
+        </dd>*@
+
+
+
+
+            @*<dt>
+            @Html.DisplayNameFor(model => model.Published)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Published)
+        </dd>*@
+
+            @*</dl>*@
         </div>
     </div>
 </div>

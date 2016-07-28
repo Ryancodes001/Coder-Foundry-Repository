@@ -38,10 +38,11 @@ namespace Coder_Foundry_Portfolio.Controllers
         }
 
         // GET: Comments/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
             //ViewBag.AuthorId = new SelectList(db.ApplicationUser, "Id", "FirstName");
             //ViewBag.PostId = new SelectList(db.Posts, "Id", "Title");
+            ViewBag.PostId = id;
             return View();
         }
 
@@ -50,13 +51,14 @@ namespace Coder_Foundry_Portfolio.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,PostId,AuthorId,Body,Created,Updated,UpdateReason")] Comment comment)
+        public ActionResult Create([Bind(Include = "Id, PostId, Body")] Comment comment)
         {
             if (ModelState.IsValid)
             {
                 db.Comments.Add(comment);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                var postid = db.blogPosts.FirstOrDefault(p => p.Id == comment.PostId);
+                return RedirectToAction("Details", "BlogPosts", new { slug = postid.Slug }); //This code connects the comment back to the post its commenting//
             }
 
             //ViewBag.AuthorId = new SelectList(db.ApplicationUsers, "Id", "FirstName", comment.AuthorId);
@@ -116,13 +118,13 @@ namespace Coder_Foundry_Portfolio.Controllers
 
         // POST: Comments/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Comment comment = db.Comments.Find(id);
             db.Comments.Remove(comment);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "BlogPosts");
         }
 
         protected override void Dispose(bool disposing)

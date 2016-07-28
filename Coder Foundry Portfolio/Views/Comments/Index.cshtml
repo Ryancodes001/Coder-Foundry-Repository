@@ -1,4 +1,10 @@
-﻿<!-- Page Header -->
+﻿@model IEnumerable<Coder_Foundry_Portfolio.Models.CodeFirst.Comment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
 <!-- Set your background image for this header on the line below. -->
 <header class="intro-header" style="background-image: url('/img/construction.jpg')">
     <div class="container">
@@ -20,11 +26,7 @@
 
 
 
-            @model IEnumerable<Coder_Foundry_Portfolio.Models.CodeFirst.Comment>
-
-            @{
-                ViewBag.Title = "Index";
-            }
+           
 
             <h2>Index</h2>
 
@@ -32,6 +34,53 @@
                 @Html.ActionLink("Create New", "Create")
             </p>
             <table class="table">
+                <tr>
+                   
+                    <th>
+                        @Html.DisplayNameFor(model => model.Post.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Body)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Created)
+                    </th>
+                    
+                   
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Author.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Post.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Body)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Created)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Updated)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UpdateReason)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+            @*<table class="table">
                 <tr>
                     <th>
                         @Html.DisplayNameFor(model => model.Author.FirstName)
@@ -83,7 +132,7 @@
                     </tr>
                 }
 
-            </table>
+            </table>*@
         </div>
     </div>
 </div>

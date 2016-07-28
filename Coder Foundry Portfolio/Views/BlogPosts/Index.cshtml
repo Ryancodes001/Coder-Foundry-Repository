@@ -36,27 +36,23 @@
                 @foreach (var item in Model)
                 { 
                         <h2>
-                            @*@Html.DisplayFor(modelItem => item.Title)*@
-                            @Html.ActionLink(item.Title, "Details", new { Slug = item.Slug })
+                           @Html.ActionLink(item.Title, "Details", new { Slug = item.Slug })
                         </h2>
+
                         <h5>
                             @Html.DisplayFor(modelItem => item.Created)
                         </h5>
-                        <br />
-
-                        <a href="@Url.Action("Details",new {slug = item.Slug})">@item.Title</a>
-
-
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                            @*@Html.ActionLink(item.Title, "Details", new { id = item.Id }) |*@
-                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                        </td>
+                     
+                       <a href="@Url.Action("Details",new {slug = item.Slug})">@item.Title</a>
+                        
+                           <h5>@Html.ActionLink("Edit", "Edit", new { id = item.Id }) </h5> <h5>@Html.ActionLink("Delete", "Delete", new { id = item.Id })</h5>
+                            
+                                               
                       <br/>
                 }
 
             <p>
-                @Html.ActionLink("Create New", "Create")
+                <button> @Html.ActionLink("Create New", "Create")</button>
             </p>
 
             <p>
