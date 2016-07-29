@@ -72,7 +72,31 @@ namespace Coder_Foundry_Portfolio.Controllers
             {
                 return View(model);
             }
+            //[AllowAnonymous]
+            //public ActionResult Login(string returnUrl)
+            //{
+            //    //So that the user can be referred back to where they were when they click logon
+            //    if (string.IsNullOrEmpty(returnUrl) && Request.UrlReferrer != null)
+            //        returnUrl = Server.UrlEncode(Request.UrlReferrer.PathAndQuery);
 
+            //    ViewBag.ReturnURL = returnUrl;
+            //    return View();
+            //}
+
+
+
+            //[HttpPost]
+            //[AllowAnonymous]
+            //[ValidateAntiForgeryToken]
+            //public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+            //{
+            //    //returnURL needs to be decoded
+            //    string decodedUrl = "";
+            //    if (!string.IsNullOrEmpty(returnUrl))
+            //        decodedUrl = Server.UrlDecode(returnUrl);
+
+
+            //Use "decodedUrl" in the switch statement.
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);

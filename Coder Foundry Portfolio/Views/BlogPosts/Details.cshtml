@@ -42,21 +42,24 @@
             {
                 <br/>
                     <p> @Html.DisplayFor(modelItem => item.Body)</p>
-                        using (Html.BeginForm("Delete", "Comments", FormMethod.Post, new { enctype = "Multipart/form-data" })) {
+                        @*using (Html.BeginForm("Delete", "Comments", FormMethod.Post, new { enctype = "Multipart/form-data" })) {
                             <input type="hidden" value="@item.Id" name="id" />
-                            <input type="submit" value="Delete" class="btn btn-default" />
-                        }
+                            <input type="submit" value="Delete" class="btn btn-default" />}*@
+                @Html.ActionLink("Edit Post", "Edit", "Comments", new { id = item.Id }, null);
+            
+                
+                 @Html.ActionLink("Delete", "Delete", "Comments", new { id = item.Id }, null);                             
+                }
 
-
-            }
+            
 
 
                @Html.ActionLink("Create Comment", "Create", "Comments", new { id = Model.Id }, null)
            
             <br/>
             <br/>
-                @Html.ActionLink("Delete", "Delete", new { id = Model.Id }) |
-                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Delete Post", "Delete", new { id = Model.Id }) |
+                @Html.ActionLink("Edit Post", "Edit", new { id = Model.Id }) |
                 @Html.ActionLink("Back to List", "Index")
             
             @*<dl class="dl-horizontal">
