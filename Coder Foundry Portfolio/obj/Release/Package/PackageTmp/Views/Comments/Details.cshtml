@@ -1,4 +1,12 @@
-﻿<!-- Page Header -->
+﻿@model Coder_Foundry_Portfolio.Models.CodeFirst.Comment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+
 <!-- Set your background image for this header on the line below. -->
 <header class="intro-header" style="background-image: url('/img/construction.jpg')">
     <div class="container">
@@ -19,12 +27,7 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
 
-            @model Coder_Foundry_Portfolio.Models.CodeFirst.Comment
-
-            @{
-                ViewBag.Title = "Details";
-            }
-
+           
             <h2>Details</h2>
 
             <div>
@@ -83,7 +86,8 @@
             </div>
             <p>
                 @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-                @Html.ActionLink("Back to List", "Index")
+                @Html.ActionLink("Back to Post", "Details", "BlogPost", new { id = Model.Id }, null)
+                @*@Html.ActionLink("Back to List", "Details")*@
             </p>
 
         </div>

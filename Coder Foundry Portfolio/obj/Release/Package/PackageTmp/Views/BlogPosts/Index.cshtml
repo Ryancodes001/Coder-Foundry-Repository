@@ -1,8 +1,10 @@
-﻿@model IEnumerable<Coder_Foundry_Portfolio.Models.CodeFirst.BlogPost>
+﻿@model IPagedList<Coder_Foundry_Portfolio.Models.CodeFirst.BlogPost>
 @{
     ViewBag.Title = "Index";
-}
 
+}
+ @using PagedList.Mvc;
+ @using PagedList;
 
 
 <!-- Page Header -->
@@ -27,37 +29,42 @@
 
             <h1>Blog Posts</h1>
             <hr/>
-            <br/>
-            <br />
-           
+          <h4>Blog Search</h4>
+            @using (Html.BeginForm("Index", "BlogPosts", FormMethod.Get, new { enctype = "Multipart/form-data" }))
+            {  <input type="text"  name="searchStr" class="form-control">
+                <input type="submit" value="Search" class="btn btn-default" />
+            }
+
             <br />
             
                 @foreach (var item in Model)
-                { 
+                {
                         <h2>
-                            @*@Html.DisplayFor(modelItem => item.Title)*@
-                            @Html.ActionLink(item.Title, "Details", new { id = item.Id })
+                           @Html.ActionLink(item.Title, "Details", new { Slug = item.Slug })
                         </h2>
 
-                        <h4>
+                        <h5>
                             @Html.DisplayFor(modelItem => item.Created)
-                        </h4>
+                        </h5>
 
-                        @*<p>
-                            @Html.Raw(item.Body) 
-                        </p>*@
-                        
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                            @*@Html.ActionLink(item.Title, "Details", new { id = item.Id }) |*@
-                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                        </td>
-                      
-                }
+                       <a href="@Url.Action("Details", new { slug = item.Slug })">@item.Title</a>
+
+                           <h5>@Html.ActionLink("Edit", "Edit", new { id = item.Id }) </h5> <h5>@Html.ActionLink("Delete", "Delete", new { id = item.Id })</h5>
+
+
+                      <br/>
+                    }
 
             <p>
-                @Html.ActionLink("Create New", "Create")
+                <button> @Html.ActionLink("Create New", "Create")</button>
             </p>
+
+            <p>
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+            </p>
+
+
         </div>
     </div>
 </div>

@@ -27,58 +27,39 @@
 
             @Html.Raw(Model.Body)
 
+         
 
-          
+               @if (Model.MediaURL != null)
+               {
 
-            @*<h2>Details</h2>
+            <img class="img-responsive" src="@Model.MediaURL" alt="">
+            <hr>
+                   }
 
-            <div>
-                <h4>BlogPost</h4>
-                <hr />
-                <dl class="dl-horizontal">
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Created)
-                    </dt>
+            <h5>Comments</h5>
 
-                    <dd>
-                        @Html.DisplayFor(model => model.Created)
-                    </dd>
-
-                   
-
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Title)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Title)
-                    </dd>
-
-                   
-
-                    @*<dt>
-                        @Html.Raw(Model.Body)
-                    </dt>*@
-
-                    @*<dd>
-                        @Html.Raw(Model.Body)
-                    </dd>*@
-
-                    
-                   
-
-                    @*<dt>
-                        @Html.DisplayNameFor(model => model.Published)
-                    </dt>
-
-                    <dd>
-                        @Html.DisplayFor(model => model.Published)
-                    </dd>*@
-
-                @*</dl>*@
+            @foreach (var item in Model.Comments)
+            {
+                <br/>
+                    <p> @Html.DisplayFor(modelItem => item.Body)</p>
+                        @*using (Html.BeginForm("Delete", "Comments", FormMethod.Post, new { enctype = "Multipart/form-data" })) {
+                            <input type="hidden" value="@item.Id" name="id" />
+                            <input type="submit" value="Delete" class="btn btn-default" />}*@
+                @Html.ActionLink("Edit Post", "Edit", "Comments", new { id = item.Id }, null);
             
+                
+                 @Html.ActionLink("Delete", "Delete", "Comments", new { id = item.Id }, null);                             
+                }
+
             
-                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+
+
+               @Html.ActionLink("Create Comment", "Create", "Comments", new { id = Model.Id }, null)
+           
+            <br/>
+            <br/>
+                @Html.ActionLink("Delete Post", "Delete", new { id = Model.Id }) |
+                @Html.ActionLink("Edit Post", "Edit", new { id = Model.Id }) |
                 @Html.ActionLink("Back to List", "Index")
             
             @*<dl class="dl-horizontal">
@@ -138,6 +119,56 @@
                     @Html.DisplayFor(model => model.Published)
                 </dd>*@
 
+
+
+
+
+            @*<h2>Details</h2>
+
+        <div>
+            <h4>BlogPost</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Created)
+                </dd>
+
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
+
+
+
+                @*<dt>
+                    @Html.Raw(Model.Body)
+                </dt>*@
+
+            @*<dd>
+            @Html.Raw(Model.Body)
+        </dd>*@
+
+
+
+
+            @*<dt>
+            @Html.DisplayNameFor(model => model.Published)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Published)
+        </dd>*@
+
+            @*</dl>*@
         </div>
     </div>
 </div>
