@@ -17,12 +17,27 @@ namespace Coder_Foundry_Portfolio.Controllers
 
         // GET: BlogPosts
         //[Authorize]
-        public ActionResult Index(int? page)
-        {
+       
+        public ActionResult Index(string searchStr, int? page) { 
+             var result = db.blogPosts.Where(p => p.Body.Contains(searchStr))
+                    .Union(db.blogPosts.Where(p => p.Title.Contains(searchStr)))
+                    .Union(db.blogPosts.Where(p => p.Comments.Any(c => c.Body.Contains(searchStr))))
+                    .Union(db.blogPosts.Where(p => p.Comments.Any(c => c.Author.DisplayName.Contains(searchStr))))
+                    .Union(db.blogPosts.Where(p => p.Comments.Any(c => c.Author.FirstName.Contains(searchStr))))
+                    .Union(db.blogPosts.Where(p => p.Comments.Any(c => c.Author.LastName.Contains(searchStr))))
+                    .Union(db.blogPosts.Where(p => p.Comments.Any(c => c.Author.UserName.Contains(searchStr))))
+                    .Union(db.blogPosts.Where(p => p.Comments.Any(c => c.Author.Email.Contains(searchStr))))
+                    .Union(db.blogPosts.Where(p => p.Comments.Any(c => c.UpdateReason.Contains(searchStr))));
+        
             int pageSize = 5;
             int pageNumber = (page ?? 1);
 
-            return View(db.blogPosts.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize )); /*this is where to order the appearence of blog entries in order*/
+            if (string.IsNullOrWhiteSpace(searchStr))
+            {
+                return View(db.blogPosts.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));/*this is where to order the appearence of blog entries in order*/
+            }
+
+            return View(result.OrderByDescending(p => p.Created).ToPagedList(pageNumber, pageSize));
         }
 
         // GET: BlogPosts/Details/5
