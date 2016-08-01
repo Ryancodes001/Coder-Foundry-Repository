@@ -10,7 +10,7 @@
 <header class="intro-header" style="background-image: url('/img/blog-entry.jpeg')">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg col-md-10 col-md">
+            <div class="col-lg-8 col-lg col-md-10 col-md col-xs-offset-2">
                 <div class="page-heading">
                     <h1>@Html.DisplayFor(model => model.Title)</h1>
                     <hr class="small">
@@ -45,7 +45,7 @@
                         @*using (Html.BeginForm("Delete", "Comments", FormMethod.Post, new { enctype = "Multipart/form-data" })) {
                             <input type="hidden" value="@item.Id" name="id" />
                             <input type="submit" value="Delete" class="btn btn-default" />}*@
-                @Html.ActionLink("Edit Post", "Edit", "Comments", new { id = item.Id }, null);
+                @Html.ActionLink("Edit Comment", "Edit", "Comments", new { id = item.Id }, null);
             
                 
                  @Html.ActionLink("Delete", "Delete", "Comments", new { id = item.Id }, null);                             

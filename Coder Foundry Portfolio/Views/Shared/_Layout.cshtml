@@ -11,7 +11,9 @@
     <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Theme CSS -->
     <link href="~/css/clean-blog.min.css" rel="stylesheet">
-    <!-- Prism Syntax Highlighter CSS -->
+   <!--custom css-->
+    <link href="~/css/custom.css" rel="stylesheet" />
+     <!-- Prism Syntax Highlighter CSS -->
     
     <link href="~/css/prism.css" rel="stylesheet" />
 
@@ -40,7 +42,7 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="@Url.Action("Index","Home")">Home</a>
+                <a class="navbar-brand" href="@Url.Action("Index","Home")">Ryan Rousseau</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -136,6 +138,23 @@
     <script src="~/Scripts/tinymce/tinymce.min.js"></script>
     <script>tinymce.init({
                             selector: '.textarea',
+                            skin: 'lightgray',
+                            menubar: 'file edit view',
+                            //toolbar: 'undo redo | styleselect | bold italic | link image',
+
+                            theme: 'modern',
+                            browser_spellcheck: true,
+                            width: 600,
+                            height: 300,
+                            plugins: [
+                              'spellchecker',
+                              'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+                              'save table contextmenu directionality emoticons template paste textcolor',
+                               
+                            ],
+                           
+                            toolbar: 'insertfile undo redo | styleselect | bold italic | bullist numlist  | forecolor backcolor emoticons'
+//});
 });</script>
 
 

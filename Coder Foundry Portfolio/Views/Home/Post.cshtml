@@ -1,11 +1,11 @@
 ﻿<!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url('/img/zen2.jpg')">
+<header class="intro-header" style="background-image: url('/img/green mountain.jpeg')">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="col-lg-8 col-lg-offset-4 col-md-10 col-xs-offset-2">
                 <div class="post-heading">
-                    <h1>A few things that I have done</h1>
+                    <h1>My Portfolio</h1>
                 </div>
             </div>
         </div>
@@ -20,9 +20,10 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-10 offset-2">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h3>Click on each button below to see a JavaScript Application and view its source code.</h3>
 
-                <a data-toggle="modal" href="#myModal1" class="btn btn-primary btn-lg">Comparing Numbers</a>
+                <a data-toggle="modal" href="#myModal1" class="btn btn-primary btn-lg">Comparing Numbers</a> 
                 <a data-toggle="modal" href="#myModal2" class="btn btn-primary btn-lg">Factorial</a>
                 <a data-toggle="modal" href="#myModal3" class="btn btn-primary btn-lg">When you say Fizz...</a>
                 <a data-toggle="modal" href="#myModal4" class="btn btn-primary btn-lg">Palindrome</a>
@@ -41,54 +42,53 @@
                  <!-- Button trigger modal -->
                  <!-- Modal -->
                  <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                     <div class="modal-dialog">
+                     <div class="modal-dialog modal-lg">
                          <div class="modal-content">
                              <div class="modal-header">
                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                  <h4 class="modal-title">Enter 5 numbers below and I will produce some calculations!</h4>
                              </div>
                              <div class="modal-body">
+                                 <div class="row"> <!--attempting to contain the modal info properly-->
+                                     <div class="col-md-5">
+                                         <h2>Enter numbers below</h2>
 
-                                 <body>
+                                         <form>
+                                             <fieldset>
 
-                                     <h2>Enter numbers below</h2>
+                                                 <input id="first" type="number" name="answer1">
+                                                 <br>
+                                                 <input id="second" type="number" name="answer2">
+                                                 <br>
+                                                 <input id="third" type="number" name="answer3">
+                                                 <br>
+                                                 <input id="fourth" type="number" name="answer4">
+                                                 <br>
+                                                 <input id="fifth" type="number" name="answer5">
+                                                 <br>
 
-                                     <form>
-                                         <fieldset>
+                                                 <button id="compareButton">Submit</button>
 
-                                             <input id="first" type="number" name="answer1">
-                                             <br>
-                                             <input id="second" type="number" name="answer2">
-                                             <br>
-                                             <input id="third" type="number" name="answer3">
-                                             <br>
-                                             <input id="fourth" type="number" name="answer4">
-                                             <br>
-                                             <input id="fifth" type="number" name="answer5">
-                                             <br>
-
-                                             <button id="compareButton">Submit</button>
-
-                                             <button id="clearButton">Clear!</button>
+                                               
 
 
-                                         </fieldset>
-                                     </form>
-                                     <h1><span id="error"></span></h1>
+                                             </fieldset>
+                                         </form>
+                                         <h1><span id="error"></span></h1>
 
-                                     <h2>The smallest number is...<span id="output1"></span></h2>
+                                         <h2>The smallest number is...<span id="output1"></span></h2>
 
-                                     <h2>The largest number is...<span id="output2"></span></h2>
+                                         <h2>The largest number is...<span id="output2"></span></h2>
 
-                                     <h2>The mean is...<span id="output3"></span></h2>
+                                         <h2>The mean is...<span id="output3"></span></h2>
 
-                                     <h2>The sum is...<span id="output4"></span></h2>
+                                         <h2>The sum is...<span id="output4"></span></h2>
 
-                                     <h2>The product is...<span id="output5"></span></h2>
+                                         <h2>The product is...<span id="output5"></span></h2>
 
-                                 </body>
+                                     </div>
 
-                                 <div class="col-sm-12 margin-small">
+                                     <div class="col-md-7">
 
 <pre class="line-numbers">
 <code class="language-javascript">$(document).ready(function() {
@@ -116,7 +116,8 @@ var input1,
 	input3 = $('#third').val();
 	input4 = $('#fourth').val();
 	input5 = $('#fifth').val();
-	if ($.isNumeric(input1)&& $.isNumeric(input2)&& $.isNumeric(input3) && $.isNumeric(input4) && $.isNumeric(input5)){
+	if ($.isNumeric(input1)&& $.isNumeric(input2)&& $.isNumeric(input3) 
+    && $.isNumeric(input4) && $.isNumeric(input5)){
 			input1 = parseFloat(input1);
 			input2 = parseFloat(input2);
 			input3 = parseFloat(input3);
@@ -148,6 +149,7 @@ var input1,
 
 
 
+                                     </div>
                                  </div>
                              </div>
                              <div class="modal-footer">
@@ -159,29 +161,30 @@ var input1,
                  <!-- Button trigger modal -------BEGINNING OF NEW MODAL-->
                  <!-- Modal -->
                  <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                     <div class="modal-dialog">
+                     <div class="modal-dialog modal-lg">
                          <div class="modal-content">
                              <div class="modal-header">
                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                  <h4 class="modal-title">Give me a number and I will produce the Factorial!</h4>
                              </div>
                              <div class="modal-body">
-                                 <body>
-                                     <h2>Enter numbers below</h2>
-                                     <form>
-                                         <fieldset>
+                                 <div class="row">
+                                     <div class="col-md-4">
+                                         <h2>Enter numbers below</h2>
+                                         <form>
+                                             <fieldset>
 
-                                             <input id="factorialInput" type="number">
-                                             <br>
+                                                 <input id="factorialInput" type="number">
+                                                 <br>
 
-                                             <button id="factorialButton">Submit</button>
+                                                 <button id="factorialButton">Submit</button>
 
-                                         </fieldset>
-                                     </form>
-                                     <h3>The Factorial is..... </h3><span id="factorialOutput"></span>
-                                 </body>
-                             </div>
+                                             </fieldset>
+                                         </form>
+                                         <h3>The Factorial is..... </h3><span id="factorialOutput"></span>
+                                     </div>
 
+                                     <div class="col-md-8">
 <pre class="line-numbers">
 <code class="language-javascript">$(document).ready(function() {
 var inputValue;
@@ -203,6 +206,9 @@ $('#factorialOutput').append(answer);
 });
 </code>
 </pre>
+                                     </div>
+                                 </div>
+                             </div>
                              <div class="modal-footer">
                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                              </div>
@@ -212,7 +218,7 @@ $('#factorialOutput').append(answer);
                  <!--New Modal BEGINNING-->
                  <!-- Modal -->
                  <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                     <div class="modal-dialog">
+                     <div class="modal-dialog modal-lg">
                          <div class="modal-content">
                              <div class="modal-header">
                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -220,26 +226,27 @@ $('#factorialOutput').append(answer);
                                  <h4> Enter two numbers below, between 1-100, and see them Fizz and Buzz, and maybe even FizzBuzz!</h4>
                              </div>
                              <div class="modal-body">
-                                 <body>
+                                 <div class="row">
+                                     <div class="col-md-4">
 
-                                     <h2>Enter numbers below to see them Fizz and Buzz!</h2>
-                                     <form>
-                                         <fieldset>
-                                             <input id="fizzInput1" type="number">
-                                             <br>
-                                             <input id="fizzInput2" type="number">
-                                             <br>
+                                         <h2>Enter numbers below to see them Fizz and Buzz!</h2>
+                                         <form>
+                                             <fieldset>
+                                                 <input id="fizzInput1" type="number">
+                                                 <br>
+                                                 <input id="fizzInput2" type="number">
+                                                 <br>
 
-                                             <button id="fizzButton">Submit</button>
-                                         </fieldset>
-                                     </form>
+                                                 <button id="fizzButton">Submit</button>
+                                             </fieldset>
+                                         </form>
 
-                                     <h2>Look at those FizzBuzzes!</h2> <h4><div id="fizzOutput"></h4>
+                                         <h2>Look at those FizzBuzzes!</h2> <h4><div id="fizzOutput" style="word-wrap"></h4>
+
+                                     </div>
 
 
-                                 </body>
-                             </div>
-                         
+                                     <div class="col-md-8">
 <pre class="line-numbers">
 <code class="language-javascript">$(document).ready(function() {
 $('#fizzButton').click(function(event) {
@@ -251,18 +258,18 @@ $('#fizzButton').click(function(event) {
 if  (((input1 > 0) && (input1 <= 100)) && ((input2 > 0) && (input2 <= 100))) {
 for (var i=1; i <= 100; i++){
    if (i % input1===0 && i % input2 ===0) {
-       $('#fizzOutput').append("<font color='green;'>FizzBuzz</font>" + "<br />");
+       $('#fizzOutput').append("<font color='green;'>FizzBuzz</font>@*" + "<br />"*@);
          
         }else if (i % input1 === 0){
-            $('#fizzOutput').append("<font color='blue;'>Fizz</font>" + "<br />");
+            $('#fizzOutput').append("<font color='blue;'>Fizz</font>@*" + "<br />"*@);
         }
        
         else if (i % input2 === 0){
-            $('#fizzOutput').append("<font color='red;'>Buzz</font>" + "<br />");
+            $('#fizzOutput').append("<font color='red;'>Buzz</font>@*" + "<br />"*@);
         }
         
         else{
-            $('#fizzOutput').append(i + "<br />");
+            $('#fizzOutput').append(i @*+ "<br />"*@);
         }
      }
     }
@@ -273,7 +280,9 @@ for (var i=1; i <= 100; i++){
 });
 </code>
 </pre>
-
+                                     </div>
+                                 </div>
+                             </div>
                          <div class="modal-footer">
                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                          </div>
@@ -285,7 +294,7 @@ for (var i=1; i <= 100; i++){
                  <!-- Button trigger modal -------BEGINNING OF NEW MODAL-->
                  <!-- Modal -->
                  <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                     <div class="modal-dialog">
+                     <div class="modal-dialog modal-lg">
                          <div class="modal-content">
                              <div class="modal-header">
                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -293,22 +302,23 @@ for (var i=1; i <= 100; i++){
                                  <h5>Try "A Man, A plan, A canal, Panama!"</h5>
                              </div>
                              <div class="modal-body">
-                               
-                                     <h2>Do you even Palindrome, Brah?</h2>
+                                 <div class="row">
+                                     <div class="col-md-4">
+                                         <h2>Do you even Palindrome, Brah?</h2>
 
-                                     <form>
-                                         <fieldset>
-                                             <input id="inputString" type="text">
-                                             <br>
+                                         <form>
+                                             <fieldset>
+                                                 <input id="inputString" type="text">
+                                                 <br>
 
-                                             <button id="palindromeButton">Submit</button>
+                                                 <button id="palindromeButton">Submit</button>
 
-                                         </fieldset>
-                                     </form>
-                                     <h2><span id="palindromeOutput"></span></h2>
+                                             </fieldset>
+                                         </form>
+                                         <h2><span id="palindromeOutput"></span></h2>
+                                     </div>
 
-                                 
-                             </div>
+                                     <div class="col-md-8">
 
 <pre class="line-numbers">
 <code class="language-javascript">$(document).ready(function() {
@@ -329,9 +339,11 @@ for (var i=1; i <= 100; i++){
  	}
   });
 });
-
 </code>
 </pre>
+                                     </div>
+                                 </div>
+                             </div>
                              <div class="modal-footer">
                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                              </div>
