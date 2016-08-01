@@ -11,6 +11,7 @@ using System.Web.Mvc;
 using PagedList.Mvc;
 namespace Coder_Foundry_Portfolio.Controllers
 {
+    [RequireHttps]
     public class BlogPostsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

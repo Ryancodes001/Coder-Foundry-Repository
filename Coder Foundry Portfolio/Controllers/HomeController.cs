@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace Coder_Foundry_Portfolio.Controllers
-{
+{[RequireHttps]
     public class HomeController : Controller
     {
         public ActionResult Index()

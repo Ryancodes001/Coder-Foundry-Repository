@@ -12,6 +12,7 @@ using Coder_Foundry_Portfolio.Models;
 
 namespace Coder_Foundry_Portfolio.Controllers
 {
+    [RequireHttps]
     [Authorize]
     public class AccountController : Controller
     {

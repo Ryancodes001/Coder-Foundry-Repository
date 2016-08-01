@@ -27,6 +27,7 @@
 
             @Html.Raw(Model.Body)
 
+            <br/>
          
 
                @if (Model.MediaURL != null)
@@ -36,28 +37,25 @@
             <hr>
                    }
 
-            <h5>Comments</h5>
+
+            <h4>Comments</h4>
 
             @foreach (var item in Model.Comments)
             {
-                <br/>
+                
                     <p> @Html.DisplayFor(modelItem => item.Body)</p>
                         @*using (Html.BeginForm("Delete", "Comments", FormMethod.Post, new { enctype = "Multipart/form-data" })) {
                             <input type="hidden" value="@item.Id" name="id" />
                             <input type="submit" value="Delete" class="btn btn-default" />}*@
-                @Html.ActionLink("Edit Comment", "Edit", "Comments", new { id = item.Id }, null);
-            
-                
-                 @Html.ActionLink("Delete", "Delete", "Comments", new { id = item.Id }, null);                             
-                }
+                <h5> @Html.ActionLink("Edit Comment", "Edit", "Comments", new { id = item.Id }, null) | 
+            @Html.ActionLink("Delete", "Delete", "Comments", new { id = item.Id }, null)</h5> 
+            }
 
-            
+            <br/>
 
-
-               @Html.ActionLink("Create Comment", "Create", "Comments", new { id = Model.Id }, null)
+            <button class="btn floatRight"> @Html.ActionLink("Create Comment", "Create", "Comments", new { id = Model.Id }, null)</button>
            
-            <br/>
-            <br/>
+           <br/>
                 @Html.ActionLink("Delete Post", "Delete", new { id = Model.Id }) |
                 @Html.ActionLink("Edit Post", "Edit", new { id = Model.Id }) |
                 @Html.ActionLink("Back to List", "Index")

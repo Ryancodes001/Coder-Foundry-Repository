@@ -58,11 +58,11 @@ namespace Coder_Foundry_Portfolio
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "796757476552-3gvhsn5f4qajacb7dq8infaavgu4eeot.apps.googleusercontent.com",
+                ClientSecret = "EN_bxGe1n1IaInhSoYimFCBU"
+            });
         }
     }
 }

@@ -9,14 +9,14 @@
 
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url('/img/zen2.jpg')">
+<header class="intro-header" style="background-image: url('/img/sedona.jpg')">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-lg col-md-10 col-md">
+            <div class="col-lg-12 col-lg col-md-12 col-md">
                 <div class="page-heading">
                     <h1>My Journey through the chaos of code to the zen of developing</h1>
                     <hr class="small">
-                    <span class="subheading">Blogging my Experience</span>
+                    <span class="subheading"><h4>Blogging my Experience</h4></span>
                 </div>
             </div>
         </div>
@@ -28,17 +28,19 @@
         <div class="col-xl-4 col-lg-offset-1 col-md-10 col-md-offset-1">
 
             <h1>Blog Posts</h1>
+            
             <hr/>
           <h4>Blog Search</h4>
             @using (Html.BeginForm("Index", "BlogPosts", FormMethod.Get, new { enctype = "Multipart/form-data" }))
             {  <input type="text"  name="searchStr" class="form-control">
-                <input type="submit" value="Search" class="btn btn-default" />
+                <input type="submit" value="Search Blogs" class="btn btn-primary floatRight" />
             }
 
             <br />
+           
             
                 @foreach (var item in Model)
-                {
+                {  @Html.HiddenFor(slug => item.Slug)//Is this necessary or working?
                         <h2>
                            @Html.ActionLink(item.Title, "Details", new { Slug = item.Slug })
                         </h2>
@@ -46,24 +48,31 @@
                         <h5>
                             @Html.DisplayFor(modelItem => item.Created)
                         </h5>
+                       
+                       @*<a href="@Url.Action("Details", new { slug = item.Slug })">@item.Title</a>*@//Do I need this line of code?
 
-                       <a href="@Url.Action("Details", new { slug = item.Slug })">@item.Title</a>
 
-                           <h5>@Html.ActionLink("Edit", "Edit", new { id = item.Id }) </h5> <h5>@Html.ActionLink("Delete", "Delete", new { id = item.Id })</h5>
+                    <h5>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </h5>
 
 
                       <br/>
                     }
 
-            <p>
-                <button> @Html.ActionLink("Create New", "Create")</button>
-            </p>
+           
+                @*<button class="btn btn-primary  floatRight">
+                    @Html.ActionLink("New Post", "Create")*@
+                    <a href="/BlogPosts/Create" class="btn btn-primary  floatRight">Create New Post</a>
+                @*</button>*@
 
             <p>
                 Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
                 @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
-            </p>
 
+              
+            </p>
 
         </div>
     </div>

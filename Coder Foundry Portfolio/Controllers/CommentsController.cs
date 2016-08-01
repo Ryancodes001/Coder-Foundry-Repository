@@ -11,6 +11,7 @@ using System.Net;
 
 namespace Coder_Foundry_Portfolio.Controllers
 {
+    [RequireHttps]
     public class CommentsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

@@ -5,20 +5,15 @@
 }
 
 
-
-
-
-
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url('/img/construction.jpg')">
+<header class="intro-header" style="background-image: url('/img/writing.jpg')">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg col-md-10 col-md">
+            <div class="col-lg-8 col-lg col-md-10 col-md col-xs-offset-2">
                 <div class="page-heading">
-                    <h1>Temp img</h1>
+                    <h1>Create Comment</h1>
                     <hr class="small">
-                    <span class="subheading">We are ready to believe you!.</span>
                 </div>
             </div>
         </div>
@@ -39,7 +34,7 @@
                 @Html.AntiForgeryToken()
 
                 <div class="form-horizontal">
-                    <h4>Comment</h4>
+                    
                     <hr />
 
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" }) 
@@ -74,6 +69,7 @@
 
             <div>
                 @Html.ActionLink("Back to List", "Index")
+                @*@Html.ActionLink("Back to Post", "Details", "BlogPost", new { id = Model.Id }, null);*@
             </div>
 
 

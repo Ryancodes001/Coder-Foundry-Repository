@@ -62,9 +62,11 @@
                     }
 
            
-                <h3 class="btn btn-primary  floatRight"
-                    @Html.ActionLink("New Post", "Create")
-                </h3>
+                @*<button class="btn btn-primary  floatRight">
+                    @Html.ActionLink("New Post", "Create")*@
+                    <a href="/BlogPosts/Create" class="btn btn-primary  floatRight">Create New Post</a>
+                @*</button>*@
+
             <p>
                 Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
                 @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
