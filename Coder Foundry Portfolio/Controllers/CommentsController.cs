@@ -124,7 +124,7 @@ namespace Coder_Foundry_Portfolio.Controllers
         // POST: Comments/Delete/5
         [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Comment comment = db.Comments.Find(id);

@@ -243,6 +243,7 @@
     <Content Include="img\open.jpeg" />
     <Content Include="img\pond.jpg" />
     <Content Include="img\sedona.jpg" />
+    <Content Include="img\starry.jpg" />
     <Content Include="img\woods.jpeg" />
     <Content Include="img\writing.jpg" />
     <Content Include="img\zen2.jpg" />
@@ -493,6 +494,8 @@
     <Content Include="Scripts\tinymce\tinymce.js" />
     <Content Include="Scripts\tinymce\tinymce.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Uploads\025Pikachu_SSB4.png" />
+    <Content Include="Uploads\Joker at school.jpg" />
     <Content Include="vendor\bootstrap\css\bootstrap.css" />
     <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
     <Content Include="vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
@@ -606,7 +609,6 @@
     <Folder Include="Coder_Foundry_Portfolio\" />
     <Folder Include="less\" />
     <Folder Include="mail\" />
-    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
