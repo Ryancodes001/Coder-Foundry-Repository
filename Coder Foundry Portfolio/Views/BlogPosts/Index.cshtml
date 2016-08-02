@@ -41,25 +41,26 @@
             
                 @foreach (var item in Model)
                 {  @Html.HiddenFor(slug => item.Slug)//Is this necessary or working?
-                        <h2>
-                           @Html.ActionLink(item.Title, "Details", new { Slug = item.Slug })
-                        </h2>
+                                                    <h2>
+                                                        @Html.ActionLink(item.Title, "Details", new { Slug = item.Slug })
+                                                    </h2>
 
-                        <h5>
-                            @Html.DisplayFor(modelItem => item.Created)
-                        </h5>
-                       
-                       @*<a href="@Url.Action("Details", new { slug = item.Slug })">@item.Title</a>*@//Do I need this line of code?
+                                                    <h5>
+                                                        @Html.DisplayFor(modelItem => item.Created)
+                                                    </h5>
 
+                                                    @*<a href="@Url.Action("Details", new { slug = item.Slug })">@item.Title</a>*@//Do I need this line of code?
 
+                    if (User.IsInRole("Admin") || User.IsInRole("Moderator"))
+                    {
                     <h5>
                         @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </h5>
-
-
-                      <br/>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </h5>
                     }
+
+                  <br />
+                }
 
            
                 @*<button class="btn btn-primary  floatRight">
